@@ -21,7 +21,7 @@ Un patrón de diseño resulta ser una solución a un problema de diseño. Para q
 ### Facade:
 Se realiza la fachada del juego como una interfaz principal donde de manera directa se genera el llamado al metodo principal del juego que es el play, alli se encuentra la declaracion de variables, logica e inicializacion del juego.
 
-![alt text](https://github.com/scesar87/agario-python/master/images/facade.png)
+![alt text](https://github.com/scesar87/agario-python/blob/master/images/facade.jpeg)
 
 ```python
  from fachada import FachadaJuego
@@ -31,7 +31,7 @@ Se realiza la fachada del juego como una interfaz principal donde de manera dire
 ### Prototype:
 Este especifica los tipos de objetos a crear en el juego, de manera que se presenta una instancia principal con dos prototipos principales representando uno de estos, el jugador principal y el segundo los jugadores opontes que se estaran moviendo de forma aleatoria por la pantalla del juego.
 
-![alt text](https://github.com/scesar87/agario-python/master/images/Prototipo.png)
+![alt text](https://github.com/scesar87/agario-python/blob/master/images/Prototipo.jpg)
 
 ```python
     class circulo_food():
@@ -48,7 +48,7 @@ Haciendo llamado de estas instancias de la siguiente manera:
 ### Iterator:
 Como manera de acceder secuencialmente a los elementos de cada jugador(circulos), se implemento este patron de comportamiento representando una clase con un metodo hijo denominado hasnext en el cual en la logica principal del juego, se realiza el llamado a esté cada vez que se desee la instancia de un nuevo circulo. 
 
-![alt text](https://github.com/scesar87/agario-python/master/images/iterador.png)
+![alt text](https://github.com/scesar87/agario-python/blob/master/images/Iterador.jpg)
 
 ```python
 def has_next(self):
