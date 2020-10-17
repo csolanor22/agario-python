@@ -79,7 +79,7 @@ class FachadaJuego:
 
         #enemy
         lista_jugadores = []
-        cantidad_jugadores = 5
+        cantidad_jugadores = 2
         for i in range(cantidad_jugadores):
             lista_jugadores.append(creator.get_circle("player"))
 
@@ -102,10 +102,9 @@ class FachadaJuego:
 
         #---La lógica del juego
 
-            #---Movimiento del circulo
+            #---Movimiento del circulo principal_player
             x, y = pygame.mouse.get_pos()
             xp, yp = principal_player.get_position()
-
             if x < xp and x < dimension_x:
                 xp = xp - principal_player.get_velocidad()
             else:
