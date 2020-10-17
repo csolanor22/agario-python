@@ -12,7 +12,7 @@ Integrantes:
 ## Agario
 El jugador empieza con una célula pequeña y tiene como objetivo ser lo más grande que pueda. Para lograr este objetivo el jugador debe mover su célula por el mapa para comer los pequeños puntos de colores que elevan su masa en 1 además de tragar otras células al colocarse directamente sobre ellas y evitar ser presa de células más grandes
 
-![alt text](https://github.com/scesar87/agario-python/master/images/agario.png)
+![alt text](https://github.com/scesar87/agario-python/blob/master/images/agario.png)
 
 ## Patrones de Diseño
 
