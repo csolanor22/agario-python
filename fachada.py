@@ -54,6 +54,7 @@ class FachadaJuego:
         lista_circulos = []
         lista_jugadores = []
         cantidad_jugadores = 5
+
         for i in range(cantidad_jugadores):
             lista_jugadores.append(creator.get_circle("player"))
 
