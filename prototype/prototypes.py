@@ -76,7 +76,7 @@ class circulo_player(circulo):
     def movimiento_jugadores(self):
         x, y = self.position
         if x >= 1000 or self.limite_x == 1:
-            self.velocidad = 1
+            self.limite_x = 1
             x = x - self.velocidad
             if x <= 0:
                 self.limite_x = 0
@@ -92,8 +92,8 @@ class circulo_player(circulo):
         self.position = (x, y)
     
     def comer(self, circulo_f):
-        x = abs(self.position[0] - circulo_f.get_position()[0])
-        y = abs(self.position[1] - circulo_f.get_position()[1])
+        x = abs(self.position[0] - circulo_f.get_position()[0])*2
+        y = abs(self.position[1] - circulo_f.get_position()[1])*2
         circulo_p_radio = self.radio
         circulo_f_radio = circulo_f.get_radio()
         if  x <= circulo_p_radio and y <= circulo_p_radio:
@@ -103,16 +103,17 @@ class circulo_player(circulo):
             else:
                 self.radio = circulo_p_radio + (circulo_f_radio*0.1)
                 circulo_f.set_radio(8)
-        if  x <= circulo_f_radio and y <= circulo_f_radio:
+                circulo_f.set_velocidad(3)
+        if  x < circulo_f_radio and y < circulo_f_radio:
             self.position = random.randrange(1000),random.randrange(600)
-            self.radio = (circulo_p_radio*0.1) + circulo_f_radio
             self.radio = 8
             self.velocidad = 3
+
         if circulo_p_radio > 15:
             self.velocidad = 2
-        if circulo_p_radio > 25:
-            self.velocidad =  1
-        if circulo_p_radio < 15:
+        elif circulo_p_radio > 25:
+            self.velocidad = 1
+        elif circulo_p_radio < 15:
             self.velocidad = 3
     
 class circulo_principal_player(circulo):
@@ -144,25 +145,27 @@ class circulo_principal_player(circulo):
         self.position = (xp, yp)
 
     def comer(self, circulo_f):
-        x = abs(self.position[0] - circulo_f.get_position()[0])
-        y = abs(self.position[1] - circulo_f.get_position()[1])
+        x = abs(self.position[0] - circulo_f.get_position()[0])*2
+        y = abs(self.position[1] - circulo_f.get_position()[1])*2
         circulo_p_radio = self.radio
         circulo_f_radio = circulo_f.get_radio()
-        if  x <= circulo_p_radio and y <= circulo_p_radio:
+        if  x < circulo_p_radio and y < circulo_p_radio:
             circulo_f.set_position(random.randrange(1000),random.randrange(600))
             if circulo_f_radio <= 3:
                 self.radio = circulo_p_radio + 0.1
             else:
                 self.radio = circulo_p_radio + (circulo_f_radio*0.1)
                 circulo_f.set_radio(8)
-        if  x <= circulo_f_radio and y <= circulo_f_radio:
+                circulo_f.set_velocidad(3)
+        if  x < circulo_f_radio and y < circulo_f_radio:
             self.position = random.randrange(1000),random.randrange(600)
-            self.radio = (circulo_p_radio*0.1) + circulo_f_radio
             self.radio = 8
             self.velocidad = 3
+
+
         if circulo_p_radio > 15:
             self.velocidad = 2
-        if circulo_p_radio > 25:
+        elif circulo_p_radio > 25:
             self.velocidad =  1
-        if circulo_p_radio < 15:
+        elif circulo_p_radio < 15:
             self.velocidad = 3

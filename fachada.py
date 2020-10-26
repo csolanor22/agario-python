@@ -70,7 +70,7 @@ class FachadaJuego:
                 player.movimiento_jugadores()
 
             #-Comparacion de circulos
-            #---Circulos_food vs. circulos_player 
+            #---Circulos_food vs. circulos_player
             while True:
                 circle = iterador_circles.has_next()
                 if circle == None:
